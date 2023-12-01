@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="268.80023"
+   viewBox="0 0 512 268.80023"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(0,-39.735816)">
+    <g
+       id="g21"
+       style="fill:#ffffff;fill-opacity:1"
+       transform="matrix(1.6,0,0,1.6,0,-155.47668)">
+      <g
+         id="g20"
+         style="fill:#ffffff;fill-opacity:1">
+        <path
+           id="path1"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:21.4067;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill"
+           d="m 0,162.00781 v 64 a 64,64 0 0 0 32,55.42578 64,64 0 0 0 64,0 v 8.57422 h 32 v -64 a 32,32 0 0 1 16,-27.71289 32,32 0 0 1 32,0 32,32 0 0 1 16,27.71289 v 64 h 32 v -64 a 32,32 0 0 1 16,-27.71289 32,32 0 0 1 32,0 32,32 0 0 1 16,27.71289 v 64 h 32 v -64 a 64,64 0 0 0 -32,-55.42578 64,64 0 0 0 -64,0 A 64,64 0 0 0 208.08789,183.7832 64,64 0 0 0 192,170.58203 a 64,64 0 0 0 -64,0 v -8.57422 H 96 v 59.98438 4.01562 a 32,32 0 0 1 -16,27.71289 32,32 0 0 1 -32,0 32,32 0 0 1 -16,-27.71289 v -64 z" />
+        <path
+           id="path1-6-7"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:21.4067;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill"
+           d="m 64,162.00781 a 64,64 0 0 0 -24,4.75391 v 8.76367 a 55.999865,55.999865 0 0 1 48,0.0117 v -8.82422 a 64,64 0 0 0 -24,-4.70508 z" />
+        <path
+           id="rect1-2"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:24.4779;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill"
+           d="m 122.00781,0 h 32 v -8 h -24 v -304 h 51.06641 a 71.999825,72 0 0 1 12.1875,-8 h -71.25391 v 312 0.6582031 z"
+           transform="rotate(90)" />
+        <path
+           id="rect1-2-5-2"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:11.8599;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill"
+           d="m 132,138.00781 a 4,4 0 0 0 -4,4 v 12.27539 h 8 v -12.27539 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 14.32617 a 72,71.999825 0 0 1 8,-1.59179 v -12.73438 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 12.26172 a 72,71.999825 0 0 1 4,-0.26172 72,71.999825 0 0 1 4,0.26172 v -12.26172 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 12.73438 a 72,71.999825 0 0 1 8,1.59179 v -14.32617 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 16.27539 a 72,71.999825 0 0 1 8,3.39844 v -19.67383 a 4,4 0 0 0 -4,-4 z" />
+        <path
+           id="rect1-2-5-2-3"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:11.8599;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill"
+           d="m 36,138.33398 a 4,4 0 0 0 -4,4 v 12.2754 h 8 v -12.2754 a 4,4 0 0 0 -4,-4 z m 14,0 A 4,4 0 0 0 46.195312,141.09766 4,4 0 0 0 46,142.33398 v 14.32618 A 72,71.999825 0 0 1 49.976562,155.75 72,71.999825 0 0 1 54,155.06836 v -12.73438 a 4,4 0 0 0 -4,-4 z m 14,0 A 4,4 0 0 0 60.195312,141.09766 4,4 0 0 0 60,142.33398 v 12.26172 a 72,71.999825 0 0 1 4,-0.26172 72,71.999825 0 0 1 4,0.26172 v -12.26172 a 4,4 0 0 0 -4,-4 z m 14,0 A 4,4 0 0 0 74.195312,141.09766 4,4 0 0 0 74,142.33398 v 12.73438 a 72,71.999825 0 0 1 8,1.5918 v -14.32618 a 4,4 0 0 0 -4,-4 z m 14,0 A 4,4 0 0 0 88.195312,141.09766 4,4 0 0 0 88,142.33398 v 12.2754 h 8 v -12.2754 a 4,4 0 0 0 -4,-4 z" />
+        <path
+           id="rect1-2-5-2-9"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:11.8599;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill"
+           d="m 228,138.00781 a 4,4 0 0 0 -4,4 v 19.67383 a 72,71.999825 0 0 1 8,-3.39844 v -16.27539 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 14.32617 a 72,71.999825 0 0 1 8,-1.59179 v -12.73438 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 12.26172 a 72,71.999825 0 0 1 4,-0.26172 72,71.999825 0 0 1 4,0.26172 v -12.26172 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 12.73438 a 72,71.999825 0 0 1 8,1.59179 v -14.32617 a 4,4 0 0 0 -4,-4 z m 14,0 a 4,4 0 0 0 -4,4 v 16.27539 a 72,71.999825 0 0 1 8,3.39844 v -19.67383 a 4,4 0 0 0 -4,-4 z" />
+      </g>
+    </g>
+  </g>
+</svg>
