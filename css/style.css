@@ -1,5 +1,7 @@
 body {
-    background-image: linear-gradient(#000000, #393939);
+    background-color: #393939;
+    margin: 0;
+
 }
 .splash h1 {
     font-family: 'League Spartan', sans-serif;
@@ -28,17 +30,18 @@ body {
     opacity: 1;
 }
 .splash {
-    height: 100vh;
+    max-height: 70vh;
     background-attachment: local;
     background-size: cover;
+    background-image: linear-gradient(#000000, #393939);
     align-content: center;
     align-items: center;
     text-align: center;
-    vertical-align: middle;
     color: white;
+    padding-bottom: 10vh;
 }
 #splash-content{
-    padding-top: 30vh;
+    padding-top: 20vh;
 }
 #splash-logo {
     max-width: 60%;
