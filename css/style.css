@@ -6,7 +6,7 @@ body {
     font-weight: 800;
     color: white;
     text-transform: uppercase;
-    font-size: calc(10px + 4vmin);
+    font-size: calc(12px + 4vmin);
     padding-bottom: 1vh;
     opacity: 1;
 }
@@ -14,7 +14,7 @@ body {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
     color: #d9d9d9;
-    font-size: calc(7px + 3vmin);
+    font-size: calc(10px + 3vmin);
     width: 100%;
     text-transform: uppercase;
     opacity: 1;
@@ -23,7 +23,7 @@ body {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
     color: #a6a6a6;
-    font-size: calc(5px + 2vmin);
+    font-size: calc(8px + 2.5vmin);
     width: 100%;
     opacity: 1;
 }
@@ -41,6 +41,6 @@ body {
     padding-top: 30vh;
 }
 #splash-logo {
-    max-width: 80%;
+    max-width: 60%;
     vertical-align: middle;
  }
