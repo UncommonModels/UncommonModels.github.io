@@ -6,12 +6,24 @@ body {
 h1 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 800;
-    color: white;
     text-transform: uppercase;
     font-size: calc(12px + 4vmin);
     padding-bottom: 1vh;
-    opacity: 1;
 }
+.text-light h1{
+    color: #ffffff;
+}
+.text-dark h2{
+    color: #1f1f1f;
+}
+
+.post-envelope {
+    min-height: 85vh;
+}
+.footer {
+    min-height: 15vh;
+}
+
 h2 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
@@ -19,7 +31,6 @@ h2 {
     font-size: calc(10px + 3vmin);
     width: 100%;
     text-transform: uppercase;
-    opacity: 1;
 }
 .splash a {
     color: #a6a6a6;
@@ -48,10 +59,15 @@ h2 {
 h3 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
-    color: #a6a6a6;
     font-size: calc(8px + 2.5vmin);
     width: 100%;
     opacity: 1;
+}
+.text-light h3{
+    color: #a6a6a6;
+}
+.text-dark h3{
+    color: #363636;
 }
 .splash {
     background-attachment: local;
