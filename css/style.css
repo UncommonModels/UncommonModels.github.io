@@ -3,7 +3,7 @@ body {
     margin: 0;
 
 }
-.splash h1 {
+h1 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 800;
     color: white;
@@ -12,7 +12,7 @@ body {
     padding-bottom: 1vh;
     opacity: 1;
 }
-.splash h2 {
+h2 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
     color: #d9d9d9;
@@ -21,7 +21,31 @@ body {
     text-transform: uppercase;
     opacity: 1;
 }
-.splash h3 {
+.splash a {
+    color: #a6a6a6;
+    text-decoration: none;
+
+ }
+.splash a:hover{
+    color: #d9d9d9;
+    text-decoration: underline;
+}
+
+.bg-dark {
+    background-color: #171717 !important;
+}
+
+.bg-dark a {
+    color: #a6a6a6;
+    text-decoration: none;
+
+ }
+.bg-dark a:hover{
+    color: #d9d9d9;
+    text-decoration: underline;
+}
+
+h3 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
     color: #a6a6a6;
@@ -30,14 +54,12 @@ body {
     opacity: 1;
 }
 .splash {
-    max-height: 70vh;
     background-attachment: local;
     background-size: cover;
     background-image: linear-gradient(#000000, #393939);
     align-content: center;
     align-items: center;
     text-align: center;
-    color: white;
     padding-bottom: 10vh;
 }
 #splash-content{
