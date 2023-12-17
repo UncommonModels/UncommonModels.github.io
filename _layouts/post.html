@@ -14,9 +14,9 @@
       <br>
       <div class="col-lg-6 mx-auto">
         {{page.content | markdownify}}
-        {% if page.external_link != "" and page.external_link != null %}
+        {% if page.purchase_link != "" and page.purchase_link != null %}
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="{{page.external_link}}" class="btn btn-primary">Learn More</a>
+          <a href="{{page.purchase_link}}" class="btn btn-primary">Purchase</a>
         </div>
         {%endif%}
       </div>

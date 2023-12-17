@@ -23,7 +23,9 @@ title: Home
                         <h5 class="card-title pb-3" style="min-height: 5vh;">{{post.title}}</h5>
                         <!-- <p class="card-text">{{post.description}}</p> -->
                         <div class="d-flex justify-content-center"><a href="{{post.url}}"
-                            class="btn btn-primary">Learn More</a></div>
+                            class="btn btn-primary mx-2">Learn More</a>{% if post.purchase_link != "" and post.purchase_link != null %}
+                              <a href="{{post.purchase_link}}" class="btn btn-primary mx-2">Purchase</a>
+                            {%endif%}</div>
                     </div>
                 </div>
             </div>
