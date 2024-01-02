@@ -3,23 +3,26 @@ body {
     margin: 0;
 
 }
+
 h1 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 800;
-    text-transform: uppercase;
     font-size: calc(12px + 4vmin);
     padding-bottom: 1vh;
 }
-.text-light h1{
+
+.text-light h1 {
     color: #ffffff;
 }
-.text-dark h2{
+
+.text-dark h2 {
     color: #1f1f1f;
 }
 
 .post-envelope {
     min-height: 85vh;
 }
+
 .footer {
     min-height: 15vh;
 }
@@ -27,17 +30,17 @@ h1 {
 h2 {
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
-    color: #d9d9d9;
     font-size: calc(10px + 3vmin);
     width: 100%;
-    text-transform: uppercase;
 }
+
 .splash a {
     color: #a6a6a6;
     text-decoration: none;
 
- }
-.splash a:hover{
+}
+
+.splash a:hover {
     color: #d9d9d9;
     text-decoration: underline;
 }
@@ -50,8 +53,9 @@ h2 {
     color: #a6a6a6;
     text-decoration: none;
 
- }
-.bg-dark a:hover{
+}
+
+.bg-dark a:hover {
     color: #d9d9d9;
     text-decoration: underline;
 }
@@ -63,12 +67,15 @@ h3 {
     width: 100%;
     opacity: 1;
 }
-.text-light h3{
+
+.text-light h3 {
     color: #a6a6a6;
 }
-.text-dark h3{
+
+.text-dark h3 {
     color: #363636;
 }
+
 .splash {
     background-attachment: local;
     background-size: cover;
@@ -78,10 +85,105 @@ h3 {
     text-align: center;
     padding-bottom: 10vh;
 }
-#splash-content{
+
+#splash-content {
     padding-top: 20vh;
 }
+
 #splash-logo {
     max-width: 60%;
     vertical-align: middle;
- }
+}
+
+.section-listing {
+    counter-reset: list;
+}
+
+.section-listing ol {
+    list-style-type: none;
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
+}
+
+.section-listing>ol {
+    counter-increment: list;
+    padding-left: 2.8em;
+}
+
+.section-listing ol>li {
+    display: table;
+    counter-increment: item;
+    margin-bottom: 0.6em;
+}
+
+.section-listing ol>li:before {
+    content: counter(h2) "." counters(item, ".");
+    display: table-cell;
+    padding-right: 0.6em;
+}
+
+.section-listing li ol>li {
+    margin: 0;
+}
+
+.section-listing li ol>li:before {
+    content: counter(h2) "." counters(item, ".") " ";
+}
+
+.section-listing {
+    counter-reset: h2
+}
+
+.section-listing h2 {
+    counter-reset: h3
+    padding-top: 1em;
+
+}
+
+.section-listing h3 {
+    counter-reset: h4
+}
+
+.section-listing h4 {
+    counter-reset: h5
+}
+
+.section-listing h5 {
+    counter-reset: h6
+}
+
+.section-listing h2:before {
+    counter-increment: h2;
+    content: counter(h2) ". "
+}
+
+.section-listing h3:before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ". "
+}
+
+.section-listing h4:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ". "
+}
+
+.section-listing h5:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "
+}
+
+.section-listing h6:before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "
+}
+
+.section-listing h2.nocount:before,
+.section-listing h3.nocount:before,
+.section-listing h4.nocount:before,
+.section-listing h5.nocount:before,
+.section-listing h6.nocount:before {
+    content: "";
+    counter-increment: none
+}
+
