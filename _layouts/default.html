@@ -1,30 +1,50 @@
 {% include head.html %}
 
-
 <body>
-  <div class="container-fluid post-envelope">
-  <div class="bg-light container post-body">
-    <div class="px-2 py-5 my-5 justify-content-center" >
-      <h1 class="text-center p-0">{{page.title}}</h1>
-      {% if page.subtitle != "" and page.subtitle != null %}
-      <div class="text-center"><p> {{page.subtitle | markdownify}} </p></div>
-      {% else %}
-      <br>
-      {% endif %}
-      <hr>
-      <br/>
-      {% if page.image != "" and page.image != null %}
-      <div class="row  justify-content-center">
-        <img src="{{ site.baseurl }}{{ page.image }}" class=" col-sm-10 col-md-8 col-lg-6 col-xl-4 align-center" alt="{{page.title}}">
+  {% include navbar.html %}
+  
+  <div class="container post-container">
+    <article class="post-article">
+      <!-- Post Header -->
+      <header class="post-header text-center mb-5">
+        
+        <h1 class="jost-heavy text-light mb-1">{{ page.title }}</h1>
+        <div class="post-meta text-muted mb-1">{{ page.date | date: "%B %d, %Y" }}</div>
+        
+      </header>
+
+      <!-- Featured Image -->
+      {% if page.image %}
+      <div class="post-image-wrapper mb-1">
+        <img src="{{ site.baseurl }}{{ page.image }}" class="post-featured-image" alt="{{ page.title }}">
       </div>
-      <br>
+      {% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+        <div class="post-tags mt-3">
+          {% for tag in page.tags %}
+          <span class="tag-badge">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      <!-- Post Content -->
+      <div class="post-content">
+        {{ content | markdownify }}
+      </div>
+
+      <!-- Purchase CTA -->
+      {% if page.purchase_link_shapeways != "" and page.purchase_link_shapeways != null %}
+      <div class="post-cta text-center mt-5">
+        <a href="{{ page.purchase_link_shapeways }}" class="btn btn-primary">Purchase on Shapeways</a>
+      </div>
       {% endif %}
 
-      <div class="container px-5 section-listing">
-        {{page.content | markdownify}}
+      <!-- Back Link -->
+      <div class="post-footer text-center mt-5 pt-4 border-top border-secondary">
+        <a href="/" class="nav-link d-inline-block">← Back to Home</a>
       </div>
-    </div>
+    </article>
   </div>
-</div>
+
+  {% include footer.html %}
 </body>
-{% include footer.html %}
