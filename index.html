@@ -11,8 +11,8 @@ title: Home
     <section class="hero-compact">
         <!-- Auto collage from assets/img -->
         <div class="hero-collage" aria-hidden="true">
-            {% assign imgs = site.static_files | where_exp: "f", "f.path contains '/assets/img/'" %}
-            {% assign imgs = imgs | where_exp: "f", "f.path contains '.JPG' or f.path contains '.JPEG' or f.path contains '.PNG' or f.path contains '.WEBP'" %}
+            {% assign imgs = site.static_files | where_exp: "f","f.path contains '/assets/img/'" %}
+            {% assign imgs = imgs | where_exp: "f","f.path contains '.JPG' or f.path contains '.JPEG' or f.path contains '.PNG' or f.path contains '.WEBP'" %}
             {% for img in imgs %}
             <div class="hero-tile" style="background-image: url('{{ img.path | relative_url }}');"></div>
             {% endfor %}
