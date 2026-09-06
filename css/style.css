@@ -1,14 +1,11 @@
+/* Palette, chrome and buttons come from css/brand.css. Only rules specific to
+   this site live below.
+
+   One deliberate divergence: the marketing site runs secondary copy brighter
+   than the docs sites do, for legibility over the hero photography. */
 :root {
-    --bg: #0f0f0f;
-    --panel: #1b1b1b;
-    --muted: #2a2a2a;
-    --text: #e6e6e6;
-    /* was #b3b3b3 */
     --text-muted: #e4e7eb;
-    --accent: #f5a524;
-    --accent-2: #4db6ff;
-    --radius: 12px;
-    --shadow: 0 12px 30px rgba(0,0,0,0.35);
+    --muted: var(--panel-2);
 }
 
 body {
@@ -39,10 +36,49 @@ h1 {
 }
 
 .footer {
-    min-height: 15vh;
-    padding: 32px 0;
+    background: #0c0c0c;
+    border-top: 1px solid rgba(255,255,255,0.07);
     color: var(--text-muted);
-    text-align: center;
+    padding: 56px 0 32px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.footer-logo { max-width: 76px; height: auto; opacity: 0.85; }
+
+.footer-col { display: flex; flex-direction: column; gap: 8px; }
+
+.footer-head {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text);
+    margin: 0 0 4px;
+}
+
+.footer-col a {
+    color: var(--text-muted);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.footer-col a:hover { color: #ffca64; }
+
+.footer-legal {
+    margin: 40px 0 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.85rem;
+    color: #9aa0a6;
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
 h2 {
@@ -242,11 +278,10 @@ h3 {
     font-style: normal;
 }
 
-// Layout
+/* Layout */
 .container {
     width: min(1100px, 92vw);
     margin: 0 auto;
-    padding: 4vh 0;
 }
 
 .section {
@@ -268,7 +303,7 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-// Hero
+/* Hero */
 .hero {
     padding: 10vh 0 8vh;
     text-align: center;
@@ -283,41 +318,6 @@ h3 {
     color: var(--text-muted);
     font-size: clamp(16px, 2.4vw, 20px);
     margin-bottom: 22px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center; /* center text */
-    gap: 8px;
-    padding: 12px 18px;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.2s ease;
-    text-align: center; /* fallback */
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent), #ffca64);
-    color: #1a1a1a;
-    box-shadow: var(--shadow);
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #ffca64, #ffd480);
-    color: #000;
-    box-shadow: 0 14px 36px rgba(255, 202, 100, 0.4);
-}
-
-.btn-ghost {
-    background: rgba(255,255,255,0.08);
-    color: var(--text);
-    border: 1px solid rgba(255,255,255,0.12);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
 }
 
 /* Cards: polish */
@@ -336,15 +336,6 @@ h3 {
     object-fit: cover;
 }
 
-.card {
-    background: var(--panel);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 18px;
-    transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
-}
-
 .card-body {
     background: transparent;
     color: var(--text);
@@ -358,129 +349,120 @@ h3 {
     color: var(--text-muted);
 }
 
-.card:hover {
+/* Section headings sit on the same left axis as the hero copy, so the page
+   reads down one edge instead of alternating centred and left blocks. */
+.section-head {
+    margin: 0 0 44px;
+    font-size: clamp(24px, 2.6vw, 34px);
+    letter-spacing: 0.01em;
+}
+
+#news, #projects, #services {
+    padding-top: 64px;
+}
+
+/* Latest News lead item: a wide horizontal card, so a single recent post reads
+   as a feature rather than one lonely column in a three-up grid. */
+.feature-card {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
+}
+
+.feature-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255,255,255,0.14);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    border-color: var(--line-hi);
+    box-shadow: var(--shadow-hi);
 }
 
-/* Buttons: ensure outline variant matches */
-.btn-outline-light {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.15s ease;
+.feature-media {
+    background-size: cover;
+    background-position: center;
+    min-height: 260px;
 }
 
-.btn-primary, .btn-outline-light {
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-align: center;
-}
-
-.btn-outline-light:hover,
-.btn-outline-light:focus {
-    border-color: #ffca64;
-    background: rgba(255, 202, 100, 0.12);
-    color: #ffca64;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(255, 202, 100, 0.25);
-}
-
-/* Section spacing + headings */
-#news, #services {
-    padding-top: 6vh;
-    padding-bottom: 6vh;
-}
-
-#news h2, #services h2, #projects h2 {
-    letter-spacing: 0.04em;
-}
-
-/* Title bar */
-.title-bar {
-    background: #0f0f0f;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 12px 0;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
-}
-
-.title-logo { max-width: 120px; height: auto; }
-
-.brand {
+.feature-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
+    align-items: flex-start;
+    padding: 32px 34px;
 }
 
-.brand:hover {
-    opacity: 0.8;
+.feature-title {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 26px);
+    color: var(--text);
+    margin-bottom: 10px;
 }
 
-.brand:hover .title-logo {
-    filter: brightness(1.2) sepia(0.3) saturate(1.5) hue-rotate(10deg);
-}
-
-.title-logo {
-    transition: filter 0.2s ease;
-}
-
-.nav-links { gap: 10px; }
-
-.nav-link {
+.feature-text {
     color: var(--text-muted);
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    padding: 6px 10px;
-    border-radius: 8px;
+    max-width: 58ch;
+    margin-bottom: 16px;
 }
 
-.nav-link:hover { color: #ffca64; background: rgba(255,255,255,0.06); }
+.feature-cta { margin-top: 18px; }
+
+.service-card {
+    align-items: flex-start;
+    padding: 28px 30px;
+}
+
+.service-card p { max-width: 52ch; }
+
+@media (max-width: 768px) {
+    .feature-card { grid-template-columns: 1fr; }
+    .feature-media { min-height: 200px; }
+    .feature-body { padding: 24px; }
+    #news, #projects, #services { padding-top: 44px; }
+}
 
 /* Compact Hero */
 .hero-compact {
     position: relative;
     overflow: hidden;
     background: #141414; /* fallback behind collage */
-    min-height: 85vh;
+    min-height: clamp(400px, 62vh, 600px);
     display: flex;
     align-items: center;
-    padding: 96px 0 80px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 72px 0;
 }
 
+/* One continuous photographic field, not a grid of cards - the tiles butt
+   together so the layouts read as a single backdrop behind the headline. */
 .hero-collage {
     position: absolute;
     inset: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
+    gap: 0;
     z-index: 0;
 }
 
 .hero-tile {
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
     aspect-ratio: 4 / 3;        /* enforce 4:3 tiles */
-    filter: saturate(0.9) contrast(0.95);
+    filter: saturate(0.72) contrast(0.95) brightness(0.85);
 }
 
-/* Dark overlay to keep text readable */
+/* Scrim: heaviest behind the copy on the left, opening up to the right so the
+   layout photography still reads, then falling to the page colour at the base. */
 .hero-compact::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(10,10,10,0.75), rgba(20,20,20,0.85));
+    background:
+        linear-gradient(to top, var(--bg) 0%, rgba(15,15,15,0) 38%),
+        linear-gradient(100deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.86) 38%, rgba(12,12,12,0.55) 100%);
     z-index: 1;
 }
 
@@ -489,13 +471,28 @@ h3 {
     z-index: 2;
 }
 
+.hero-compact h1 {
+    max-width: 18ch;
+    font-size: clamp(30px, 4.4vw, 50px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    padding-bottom: 0;
+    margin-bottom: 14px;
+}
+
+.hero-sub {
+    max-width: 44ch;
+    font-size: clamp(15px, 1.35vw, 18px);
+    color: var(--text-muted);
+}
+
 /* Mobile/Tablet layout for collage */
 @media (max-width: 992px) {
     .hero-collage { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
     .hero-collage { grid-template-columns: repeat(2, 1fr); }
-    .hero-compact { min-height: 80vh; padding: 120px 0 80px; text-align: center; }
+    .hero-compact { min-height: 0; padding: 56px 0 64px; }
 }
 
 /* Post Layout */
@@ -588,18 +585,6 @@ h3 {
 
 /* Tag badges (match post pages) */
 .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: var(--text);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-}
-
 .text-muted {
     color: var(--text-muted) !important;
 }
@@ -613,27 +598,12 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    .title-bar .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .brand { align-items: center; } /* ensure center on mobile */
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-    .hero-compact {
-        min-height: 80vh; /* slightly shorter on mobile */
-        padding: 120px 0 80px;
-        text-align: center;
-    }
-    
     .hero-compact h1 {
-        font-size: clamp(20px, 5vw, 28px); /* smaller on mobile */
+        max-width: none;
+        font-size: clamp(26px, 7vw, 34px);
     }
+
+    .hero-sub { max-width: none; }
     .card-img-top {
         height: 140px;
     }

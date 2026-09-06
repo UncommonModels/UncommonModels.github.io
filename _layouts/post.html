@@ -31,6 +31,16 @@
         {{ content | markdownify }}
       </div>
 
+      <!-- Project CTA -->
+      {% if page.project_link != "" and page.project_link != null %}
+      <div class="post-cta text-center mt-5 d-flex flex-wrap gap-2 justify-content-center">
+        <a href="{{ page.project_link }}" class="btn btn-primary">{{ page.project_link_text | default: "View Project" }}</a>
+        {% if page.repo_link != "" and page.repo_link != null %}
+        <a href="{{ page.repo_link }}" class="btn btn-outline-light">View on GitHub</a>
+        {% endif %}
+      </div>
+      {% endif %}
+
       <!-- Purchase CTA -->
       {% if page.purchase_link_shapeways != "" and page.purchase_link_shapeways != null %}
       <div class="post-cta text-center mt-5">

@@ -1,0 +1,208 @@
+/* Uncommon Models - shared brand layer.
+   ----------------------------------------------------------------------------
+   Source of truth for the palette, type and the chrome that appears on every
+   Uncommon Models property: the title bar, buttons, tag badges and card surface.
+   Published from UncommonModels.github.io and consumed by the project docs sites,
+   which sit under the same domain (www.uncommonmodels.com/<project>/).
+
+   Consumers must also load the two brand faces:
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&display=swap">
+
+   Load this BEFORE the site's own stylesheet, and before Bootstrap-dependent
+   overrides on sites that use Bootstrap. Site-specific layout stays local; only
+   put a rule here when two or more properties need it to look the same. */
+
+:root {
+    color-scheme: dark;
+
+    /* surfaces */
+    --bg: #0f0f0f;
+    --panel: #1b1b1b;
+    --panel-2: #2a2a2a;
+
+    /* type colours */
+    --text: #e6e6e6;
+    --text-muted: #a6a6a6;
+    --nav-text: #e4e7eb;
+
+    /* accents */
+    --accent: #f5a524;
+    --accent-hi: #ffca64;
+    --accent-2: #4db6ff;
+
+    /* hairlines and washes */
+    --line: rgba(255, 255, 255, 0.08);
+    --line-hi: rgba(255, 255, 255, 0.14);
+    --wash: rgba(255, 255, 255, 0.06);
+    --accent-wash: rgba(255, 202, 100, 0.12);
+
+    /* shape */
+    --radius: 12px;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --shadow-hi: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+    /* type stacks */
+    --sans: "Jost", system-ui, sans-serif;
+    --display: "League Spartan", "Jost", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ---- title bar ---- */
+
+.title-bar {
+    background: #0f0f0f;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.title-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+}
+
+.brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--text);
+    transition: opacity 0.2s ease;
+}
+
+.brand:hover { opacity: 0.8; text-decoration: none; color: var(--text); }
+.brand:hover .title-logo {
+    filter: brightness(1.2) sepia(0.3) saturate(1.5) hue-rotate(10deg);
+}
+
+.title-logo {
+    max-width: 120px;
+    height: auto;
+    transition: filter 0.2s ease;
+}
+
+.nav-links { display: flex; align-items: center; gap: 10px; }
+
+.nav-link {
+    color: var(--nav-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.nav-link:hover { color: var(--accent-hi); background: var(--wash); }
+
+/* ---- buttons ---- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    /* pinned so the button is the same height with or without Bootstrap present */
+    line-height: 1.5;
+    text-decoration: none;
+    border: 0;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+.btn-primary, .btn-outline-light {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hi));
+    color: #1a1a1a;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-hi), #ffd480);
+    color: #000;
+    box-shadow: 0 14px 36px rgba(255, 202, 100, 0.4);
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.15s ease;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    border-color: var(--accent-hi);
+    background: var(--accent-wash);
+    color: var(--accent-hi);
+    box-shadow: 0 10px 26px rgba(255, 202, 100, 0.25);
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ---- surfaces ---- */
+
+.card {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px;
+    transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-hi);
+    box-shadow: var(--shadow-hi);
+}
+
+.tag-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .title-bar-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
