@@ -145,20 +145,23 @@ h3 {
     vertical-align: middle;
 }
 
+/* Outline numbering (1, 1.1, 1.1.1) for ## headings and ordered lists;
+   enable with `outline_numbering: true` in a page's front matter.
+   Top-level items of a list before the first ## count as sections too,
+   and lists under a ## are prefixed with its number. */
 .section-listing {
-    counter-reset: list;
+    counter-reset: section;
+}
+
+.section-listing h2::before {
+    counter-increment: section;
+    content: counter(section) ". ";
 }
 
 .section-listing ol {
     list-style-type: none;
     counter-reset: item;
-    margin: 0;
-    padding: 0;
-}
-
-.section-listing>ol {
-    counter-increment: list;
-    padding-left: 2.8em;
+    padding-left: 0;
 }
 
 .section-listing ol>li {
@@ -167,73 +170,30 @@ h3 {
     margin-bottom: 0.6em;
 }
 
-.section-listing ol>li:before {
-    content: counter(h2) "." counters(item, ".");
+.section-listing ol>li::before {
+    content: counters(item, ".") ".";
     display: table-cell;
     padding-right: 0.6em;
 }
 
-.section-listing li ol>li {
-    margin: 0;
+.section-listing>ol>li {
+    counter-increment: item section;
 }
 
-.section-listing li ol>li:before {
-    content: counter(h2) "." counters(item, ".") " ";
+.section-listing li ol {
+    margin-top: 0.6em;
 }
 
-.section-listing {
-    counter-reset: h2
+.section-listing li ol>li::before {
+    content: counters(item, ".");
 }
 
-.section-listing h2 {
-    counter-reset: h3 padding-top: 1em;
-
+.section-listing>h2~ol>li {
+    counter-increment: item;
 }
 
-.section-listing h3 {
-    counter-reset: h4
-}
-
-.section-listing h4 {
-    counter-reset: h5
-}
-
-.section-listing h5 {
-    counter-reset: h6
-}
-
-.section-listing h2:before {
-    counter-increment: h2;
-    content: counter(h2) ". "
-}
-
-.section-listing h3:before {
-    counter-increment: h3;
-    content: counter(h2) "." counter(h3) ". "
-}
-
-.section-listing h4:before {
-    counter-increment: h4;
-    content: counter(h2) "." counter(h3) "." counter(h4) ". "
-}
-
-.section-listing h5:before {
-    counter-increment: h5;
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "
-}
-
-.section-listing h6:before {
-    counter-increment: h6;
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "
-}
-
-.section-listing h2.nocount:before,
-.section-listing h3.nocount:before,
-.section-listing h4.nocount:before,
-.section-listing h5.nocount:before,
-.section-listing h6.nocount:before {
-    content: "";
-    counter-increment: none
+.section-listing>h2~ol li::before {
+    content: counter(section) "." counters(item, ".");
 }
 
 .league-spartan-heavy {

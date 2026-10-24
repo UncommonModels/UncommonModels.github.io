@@ -10,6 +10,9 @@
         
         <h1 class="jost-heavy text-light mb-1">{{ page.title }}</h1>
         <div class="post-meta text-muted mb-1">{{ page.date | date: "%B %d, %Y" }}</div>
+        {% if page.subtitle != "" and page.subtitle != null %}
+        <div class="post-meta text-muted mb-1">{{ page.subtitle | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+        {% endif %}
         
       </header>
 
@@ -28,7 +31,7 @@
         {% endif %}
 
       <!-- Post Content -->
-      <div class="post-content">
+      <div class="post-content{% if page.outline_numbering %} section-listing{% endif %}">
         {{ content | markdownify }}
       </div>
 
